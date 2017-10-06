@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="number" class="com.thehit.domain.Ticket">
+	<property name="number" value="150"></property>
+</bean>
+<bean id="ticketByType" class="com.thehit.domain.Ticket" autowire="byType">
+	<property name="price" value="79"></property>
+</bean>
+
+<bean id="ticket" class="com.thehit.domain.Ticket">
+	<constructor-arg name="number" value="200"></constructor-arg>
+	<constructor-arg name="price" value="65"></constructor-arg>
+</bean>
+<bean id="age" class="com.thehit.domain.Person">
+	<property name="age" value="27"></property>
+</bean>
+<bean id="personTest" class="com.thehit.domain.Person" autowire="byName">
+	<property name="firstname" value="Jamie"></property>
+	<property name="lastname" value="Murphy"></property>
+</bean>
+<bean id="autowireByConstructor" class="com.thehit.domain.AudienceImpl" autowire="constructor">
+		<constructor-arg name="firstname" value="Iain"></constructor-arg>
+		<constructor-arg name="lastname" value="Coppinger"></constructor-arg>
+		<constructor-arg name="age" value="34"></constructor-arg>
+</bean>
+</beans>
